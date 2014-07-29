@@ -1,0 +1,29 @@
+<h1>Listing email_sends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>To</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_sends.each do |email_send| %>
+      <tr>
+        <td><%= email_send.to %></td>
+        <td><%= email_send.subject %></td>
+        <td><%= email_send.message %></td>
+        <td><%= link_to 'Show', email_send %></td>
+        <td><%= link_to 'Edit', edit_email_send_path(email_send) %></td>
+        <td><%= link_to 'Destroy', email_send, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email send', new_email_send_path %>
