@@ -1,0 +1,4 @@
+class RenamestdidTostudentid < ActiveRecord::Migration
+  def change
+  end
+end

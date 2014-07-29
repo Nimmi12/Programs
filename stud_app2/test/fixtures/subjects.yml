@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stdid: 1
+  subname: MyString
+  mark: 1
+
+two:
+  stdid: 1
+  subname: MyString
+  mark: 1
