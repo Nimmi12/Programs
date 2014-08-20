@@ -1,0 +1,33 @@
+<h1>Match details</h1>
+<%= notice %>
+<style>
+table, th, td {
+   border: 1px solid black
+} 
+</style>
+<table>
+	<thead>
+		<tr>
+			<th>Match_name</th>
+			<th>Date</th>
+			<th>Time</th>
+		</tr>
+	</thead>
+
+	<tbody> 
+		
+		<% @matches.each do |match| %>
+		  <tr>
+		  	<td><%= match.matchname %></td>
+		  	<td><%= match.date %></td>
+		  	<td><%= match.time %></td>
+		  	<td><%= link_to 'Edit Match', edit_match_path(match) %></td>
+		  	<td><%= link_to 'Delete Match', match_path(match),method: :delete %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
+<%#= link_to 'Add new Match', matches_new_path(@league_id) , method: :get  %>
+<%= link_to 'Add new Match', :controller =>"matches", :action => "new", :id => @league_id , method: :get  %>
+<%= link_to 'Back' ,leagues_path %>

@@ -1,0 +1,39 @@
+<h1>League details</h1>
+<%= notice  %>
+<style>
+table, th, td {
+   border: 1px solid black
+} 
+</style>
+<table>
+	<thead>
+		<tr>
+			<th>League_name</th>
+			<th>Start_Date</th>
+			<th>End_date</th>
+			<th>Location</th>
+			<th>Status</th>
+		</tr>
+
+	</thead>
+
+	<tbody>
+		<% @leagues.each do |league| %>
+		  <tr>
+		  	<td><%= league.league_name %></td>
+		  	<td><%= league.start_date %></td>
+		  	<td><%= league.end_date %></td>
+		  	<td><%= league.location %></td>
+		  	<td><%= league.status %></td>
+		  	<td><%= link_to 'view Matches', :controller => "matches",:action => 'index', :id => league.id %></td>
+		  	<td><%#= link_to 'Delete League', :controller => "leagues",:action => 'delete',:method => "delete", :id => league.id %></td>
+		  	<td><%= link_to 'Edit League', edit_league_path(league) %></td>
+		  	<td><%= link_to 'Delete League', league_path(league),method: :delete %></td>
+		  	<td><%#= link_to 'View Matches', matches_path(league)%></td>
+		  	
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+<br>
+<%= link_to 'Add new league', new_league_path %>
